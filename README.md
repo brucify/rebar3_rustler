@@ -6,7 +6,7 @@ A basic set of [rebar3](https://www.rebar3.org) templates to aid creating [rustl
 
 * `rustler_lib` for generating new Rustler-based Erlang NIF library
 
-Generated NIF library:
+The generated NIF library:
 ```
 ├── rebar.config
 └── src
