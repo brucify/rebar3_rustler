@@ -1,0 +1,23 @@
+{description, "Erlang NIF written in Rust using rustler"}.
+{variables, [
+    {name, "mylib", "Name of the Erlang NIF lib"},
+    {desc, "An Erlang NIF written in Rust", "Short description of the lib"}
+]}.
+
+%% Erlang code templates
+
+{template, "my_lib.erl", "{{name}}/src/{{name}}.erl"}.
+{template, "my_lib.app.src", "{{name}}/src/{{name}}.app.src"}.
+{template, "_rebar.config", "{{name}}/rebar.config"}.
+
+% Rust code templates
+
+{template, "_Cargo.toml", "{{name}}/native/{{name}}/Cargo.toml"}.
+{template, "lib.rs", "{{name}}/native/{{name}}/src/lib.rs"}.
+{template, "_.cargo_config", "{{name}}/native/{{name}}/.cargo/config"}.
+
+%% Remainder copied verbatim from rebar3 built in OTP app template
+
+{template, "_.gitignore", "{{name}}/.gitignore"}.
+{template, "_LICENSE", "{{name}}/LICENSE"}.
+{template, "_README.md", "{{name}}/README.md"}.
