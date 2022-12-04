@@ -9,6 +9,7 @@
 {template, "my_lib.erl", "{{name}}/src/{{name}}.erl"}.
 {template, "my_lib.app.src", "{{name}}/src/{{name}}.app.src"}.
 {template, "_rebar.config", "{{name}}/rebar.config"}.
+{template, "_Makefile", "{{name}}/Makefile"}.
 
 % Rust code templates
 

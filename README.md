@@ -42,8 +42,7 @@ Running `rebar3 new` should now show extra templates available:
 
 	$ rebar3 new rustler_lib my_nif # change my_nif to whatever you want to call your lib
 	$ cd my_nif
-	$ rebar3 compile
-	$ rebar3 shell
+	$ make
 
 Compiling the app will fetch dependencies for both Erlang and Rust:
 
