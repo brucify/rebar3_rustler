@@ -1,0 +1,15 @@
+{description, "A basic Erlang NIF written in Rust using rustler"}.
+{variables, [
+    {name, "my_nif", "Name of the Erlang NIF lib"},
+    {desc, "An Erlang NIF written in Rust", "Short description of the lib"}
+]}.
+
+%% Erlang code templates
+
+{template, "my_lib.erl",            "src/{{name}}.erl"}.
+
+% Rust code templates
+
+{template, "_Cargo.toml",           "native/{{name}}/Cargo.toml"}.
+{template, "lib.rs",                "native/{{name}}/src/lib.rs"}.
+{template, "_.cargo_config",        "native/{{name}}/.cargo/config"}.

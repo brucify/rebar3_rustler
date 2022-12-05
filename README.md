@@ -2,9 +2,10 @@
 
 A basic set of [rebar3](https://www.rebar3.org) templates to aid creating [rustler](https://github.com/rusterlium/rustler)-based Erlang NIFs (Native Implemented Functions), allowing us to call Rust from Erlang.
 
-1 template is provided:
+2 templates are provided:
 
-* `rustler_lib` for generating new Rustler-based Erlang NIF library
+* `rustler_lib` for generating a complete Rustler-based Erlang NIF library
+* `rustler_nif` for generating new Rustler-based Erlang NIF
 
 The generated NIF library:
 ```
@@ -33,7 +34,8 @@ Running `rebar3 new` should now show extra templates available:
 
 	$ rebar3 new
 	...
-	rustler_lib (custom): Erlang NIF written in Rust using rustler
+    rustler_lib (custom): Complete Erlang NIF library written in Rust using rustler
+    rustler_nif (custom): A basic Erlang NIF written in Rust using rustler
 	...
 
 ## Usage
