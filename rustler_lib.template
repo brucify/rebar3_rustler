@@ -6,19 +6,19 @@
 
 %% Erlang code templates
 
-{template, "my_lib.erl",            "{{name}}/src/{{name}}.erl"}.
-{template, "my_lib.app.src",        "{{name}}/src/{{name}}.app.src"}.
-{template, "_rebar.config",         "{{name}}/rebar.config"}.
-{template, "_Makefile",             "{{name}}/Makefile"}.
+{template, "_src/my_lib.erl",               "{{name}}/src/{{name}}.erl"}.
+{template, "_src/my_lib.app.src",           "{{name}}/src/{{name}}.app.src"}.
+{template, "_rebar.config",                 "{{name}}/rebar.config"}.
+{template, "_Makefile",                     "{{name}}/Makefile"}.
 
 % Rust code templates
 
-{template, "_Cargo.toml",           "{{name}}/native/{{name}}/Cargo.toml"}.
-{template, "lib.rs",                "{{name}}/native/{{name}}/src/lib.rs"}.
-{template, "_.cargo_config",        "{{name}}/native/{{name}}/.cargo/config"}.
+{template, "_native/_Cargo.toml",           "{{name}}/native/{{name}}/Cargo.toml"}.
+{template, "_native/lib.rs",                "{{name}}/native/{{name}}/src/lib.rs"}.
+{template, "_native/_.cargo/_config",       "{{name}}/native/{{name}}/.cargo/config"}.
 
 %% Remainder copied verbatim from rebar3 built in OTP app template
 
-{template, "_.gitignore",           "{{name}}/.gitignore"}.
-{template, "_LICENSE",              "{{name}}/LICENSE"}.
-{template, "_README.md",            "{{name}}/README.md"}.
+{template, "_.gitignore",                   "{{name}}/.gitignore"}.
+{template, "_LICENSE",                      "{{name}}/LICENSE"}.
+{template, "_README.md",                    "{{name}}/README.md"}.
