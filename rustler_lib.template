@@ -1,6 +1,7 @@
 {description, "Complete Erlang NIF library written in Rust using rustler"}.
 {variables, [
     {name, "my_nif", "Name of the Erlang NIF lib"},
+    {app_name, "my_nif", "Name of the OTP app in which the Erlang NIF lib resides"},
     {desc, "An Erlang NIF written in Rust", "Short description of the lib"}
 ]}.
 
@@ -15,6 +16,7 @@
 
 {template, "_native/_Cargo.toml",           "{{name}}/native/{{name}}/Cargo.toml"}.
 {template, "_native/lib.rs",                "{{name}}/native/{{name}}/src/lib.rs"}.
+{template, "_native/_README.md",            "{{name}}/native/{{name}}/README.md"}.
 {template, "_native/_.cargo/_config",       "{{name}}/native/{{name}}/.cargo/config"}.
 
 %% Remainder copied verbatim from rebar3 built in OTP app template

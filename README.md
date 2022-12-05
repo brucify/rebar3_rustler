@@ -5,7 +5,7 @@ A basic set of [rebar3](https://www.rebar3.org) templates to aid creating [rustl
 2 templates are provided:
 
 * `rustler_lib` for generating a complete Rustler-based Erlang NIF library
-* `rustler_nif` for generating new Rustler-based Erlang NIF
+* `rustler_nif` for generating new Rustler-based NIF in an existing Erlang app
 
 The generated NIF library:
 ```
@@ -65,6 +65,13 @@ To check if we can call Rust from the Erlang shell:
 
 	1> my_nif:add(2, 2).
     4
+
+### Creating a NIF in an existing Erlang app
+
+    $ cd my_app                                         
+    $ rebar3 new rustler_nif my_nif app_name=my_app     # change my_app to your existing app name
+
+Then follow the instructions in `native/my_nif/README.md`
 
 ### Testing
 

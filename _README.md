@@ -1,7 +1,7 @@
 {{name}}
 =====
 
-An Erlang NIF written in Rust
+An Erlang NIF library written in Rust
 
 Build
 -----

@@ -43,7 +43,7 @@ untagged_enum_echo(_Untagged) ->
 %%%===================================================================
 
 init() ->
-    ?load_nif_from_crate({{name}}, ?crate_{{name}}, 0).
+    ?load_nif_from_crate({{app_name}}, ?crate_{{name}}, 0).
 
 not_loaded(Line) ->
     erlang:nif_error({not_loaded, [{module, ?MODULE}, {line, Line}]}).
