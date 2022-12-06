@@ -1,0 +1,16 @@
+{application, rebar3_rustler,
+ [{description, "Create new rustler-based Erlang NIF libs in no time"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache-2.0"]},
+  {links, [
+   {"GitHub", "https://github.com/brucify/rebar3_rustler"}
+  ]}
+ ]}.

@@ -1,6 +1,7 @@
 # Rebar3 rustler plugin
 
 A basic set of [rebar3](https://www.rebar3.org) templates to aid creating [rustler](https://github.com/rusterlium/rustler)-based Erlang NIFs (Native Implemented Functions), allowing us to call Rust from Erlang.
+This plugin uses [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) to compile Rust crates in the crates directory and copy all binary outputs to `priv/crates/<cratename>/<binary>`.
 
 2 templates are provided:
 
@@ -21,25 +22,20 @@ The generated NIF library:
 │           └── lib.rs
 ```
 
-## Installation
+## Usage
 
-Ensure [rebar3](https://www.rebar3.org) is installed and working.
+Use the plugin by adding the following to `~/.config/rebar3/rebar.config`
 
-Clone this repo directly into your `~/.config/rebar3/templates` directory:
+    {plugins, [rebar3_rustler]}.
 
-	$ mkdir -p ~/.config/rebar3/templates
-	$ git clone https://github.com/brucify/rebar3_rustler.git ~/.config/rebar3/templates
 
 Running `rebar3 new` should now show extra templates available:
 
 	$ rebar3 new
 	...
-    rustler_lib (custom): Complete Erlang NIF library written in Rust using rustler
-    rustler_nif (custom): A basic Erlang NIF written in Rust using rustler
+    rustler_lib (plugin): Complete Erlang NIF library written in Rust using rustler
+    rustler_nif (plugin): A basic Erlang NIF written in Rust using rustler
 	...
-
-## Usage
-
 ### Creating a new Erlang NIF library
 
 	$ rebar3 new rustler_lib my_nif # change my_nif to whatever you want to call your lib
@@ -79,6 +75,24 @@ Running Erlang eunit tests will also evoke `cargo test` in the Rust crate, thank
 
 	$ rebar3 eunit    # unit tests
 
+### Options 
+
+Pass options as usual to the [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) plugin.
+
+    {cargo_opts, [
+        {src_dir, "native/my_nif"}
+    ]}.
+
+    {provider_hooks, [
+        {pre, [
+            {compile, {cargo, build}}
+        ]},
+        {post, [
+            {clean, {cargo, clean}},
+            {eunit, {cargo, test}}
+        ]}
+    ]}.
+
 ## License
 
 Copyright 2022 Bruce Yinhe
@@ -94,3 +108,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+
+# Acknowledgment
+This plugin is based on
+[rebar3_cargo](https://github.com/rusterlium/rebar3_cargo)

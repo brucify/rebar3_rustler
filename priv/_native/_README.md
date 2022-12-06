@@ -4,7 +4,7 @@
 
 Add the following lines to your `rebar.config` file:
 ```erlang
-{plugins, [rebar3_cargo]}.
+{plugins, [rebar3_rustler]}.
 
 {cargo_opts, [
     {src_dir, "native/{{name}}"}
