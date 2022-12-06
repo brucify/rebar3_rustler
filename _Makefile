@@ -11,6 +11,7 @@ deps:
 	@$(REBAR3) deps
 
 shell:
+	@$(REBAR3) cargo clean
 	@$(REBAR3) shell
 
 clean:
@@ -27,6 +28,7 @@ docs:
 	@$(REBAR3) edoc
 
 test:
+	@$(REBAR3) cargo clean
 	@$(REBAR3) eunit
 
 test-all:
