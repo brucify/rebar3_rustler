@@ -1,5 +1,8 @@
 # Rebar3 rustler plugin
 
+[![Hex.pm package version](https://img.shields.io/hexpm/v/rebar3_rustler.svg)](https://hex.pm/packages/rebar3_rustler)
+[![Last Updated](https://img.shields.io/github/last-commit/brucify/rebar3_rustler.svg)](https://github.com/brucify/rebar3_rustler/commits/master)
+
 A basic set of [rebar3](https://www.rebar3.org) templates to aid creating [rustler](https://github.com/rusterlium/rustler)-based Erlang NIFs (Native Implemented Functions), allowing us to call Rust from Erlang.
 This plugin uses [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) to compile Rust crates in the crates directory and copy all binary outputs to `priv/crates/<cratename>/<binary>`.
 
@@ -8,7 +11,7 @@ This plugin uses [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) to c
 * `rustler_lib` for generating a complete Rustler-based Erlang NIF library
 * `rustler_nif` for generating new Rustler-based NIF in an existing Erlang app
 
-The generated NIF library:
+Structure of the generated NIF library. An example can be found [here](https://github.com/brucify/my_nif).
 ```
 ├── rebar.config
 └── src
@@ -27,7 +30,6 @@ The generated NIF library:
 Use the plugin by adding the following to `~/.config/rebar3/rebar.config`
 
     {plugins, [rebar3_rustler]}.
-
 
 Running `rebar3 new` should now show extra templates available:
 
@@ -71,7 +73,7 @@ Then follow the instructions in `native/my_nif/README.md`
 
 ### Testing
 
-Running Erlang eunit tests will also evoke `cargo test` in the Rust crate, thanks to the [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) plugin.
+Running Erlang eunit tests will also invoke `cargo test` in the Rust crate, thanks to the [rebar3_cargo](https://github.com/rusterlium/rebar3_cargo) plugin.
 
 	$ rebar3 eunit    # unit tests
 
