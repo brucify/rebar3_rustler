@@ -19,5 +19,5 @@ rebar3.crashdump
 *~
 target
 Cargo.lock
-crates.hrl
+cargo.hrl
 priv/crates

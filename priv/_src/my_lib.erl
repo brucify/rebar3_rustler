@@ -9,7 +9,7 @@
         , untagged_enum_echo/1
         ]).
 
--include("crates.hrl").
+-include("cargo.hrl").
 -on_load(init/0).
 -define(NOT_LOADED, not_loaded(?LINE)).
 
@@ -43,7 +43,7 @@ untagged_enum_echo(_Untagged) ->
 %%%===================================================================
 
 init() ->
-    ?load_nif_from_crate({{app_name}}, ?crate_{{name}}, 0).
+    ?load_nif_from_crate({{name}}, 0).
 
 not_loaded(Line) ->
     erlang:nif_error({not_loaded, [{module, ?MODULE}, {line, Line}]}).

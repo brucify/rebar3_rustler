@@ -66,8 +66,8 @@ To check if we can call Rust from the Erlang shell:
 
 ### Creating a NIF in an existing Erlang app
 
-    $ cd my_app                                         
-    $ rebar3 new rustler_nif my_nif app_name=my_app     # change my_app to your existing app name
+    $ cd my_app                      # change my_app to your existing app name               
+    $ rebar3 new rustler_nif my_nif
 
 Then follow the instructions in `native/my_nif/README.md`
 

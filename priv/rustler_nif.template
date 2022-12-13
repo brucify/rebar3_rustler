@@ -1,7 +1,6 @@
 {description, "A basic Erlang NIF written in Rust using rustler"}.
 {variables, [
     {name, "my_nif", "Name of the Erlang NIF lib"},
-    {app_name, "my_nif", "Name of the OTP app in which the Erlang NIF lib resides"},
     {desc, "An Erlang NIF written in Rust", "Short description of the lib"}
 ]}.
 

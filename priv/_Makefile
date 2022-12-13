@@ -19,6 +19,7 @@ clean:
 
 clean-all:
 	rm -rf $(CURDIR)/priv/crates
+	rm -rf $(CURDIR)/src/cargo.hrl
 	rm -rf $(CURDIR)/_build
 
 distclean: clean
