@@ -10,5 +10,13 @@
   {modules, []},
 
   {licenses, ["Apache 2.0"]},
+  {files, [ "LICENSE"
+          , "Makefile"
+          , "README.md"
+          , "native"
+          , "rebar.config"
+          , "rebar.lock"
+          , "src"
+          ]}
   {links, []}
  ]}.
